@@ -1,0 +1,192 @@
+@import "//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css";
+@mixin random-bgr(){
+  color: rgb(255, random(100), random(170));
+}
+*::selection {
+  background-color: gray;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+body {
+  background-image: initial;
+  background-color: #101015;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  >.main{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    >p{
+      color: white;
+      font-family: Hack;
+      text-transform: uppercase;
+      font-size: 1.2em;
+    }
+    >h1 {
+      color: white;
+      font-family: Hack;
+      text-transform: uppercase;
+      font-size: 1.4em;
+    }
+    >.work {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      align-content: flex-start;
+      flex-wrap: nowrap;
+      >.projects{
+          margin: auto -25px auto 0;
+        >.project {
+          display: flex;
+          align-content: center;
+          margin: 9px 0;
+          padding: 3px 0px 3px 0px;
+          width: 155px;
+          flex-wrap: nowrap;
+          position: relative;
+          justify-content: flex-start;
+          align-items: center;
+          color: white;
+          flex-direction: row;
+          transition: .2s cubic-bezier(0.9, 0.29, 0.24, 0.96);
+          &:hover {
+            cursor: pointer;
+            color: black;
+            box-shadow: inset 150px 0px 0px 0px #ffffff;
+            >.project-url {
+              color: black!important;
+            }
+            >.demo {
+              color: orangered!important;
+              margin-left: +10px;
+              &::after,&::before {
+                opacity: 100%;
+              }
+            }
+            
+          }
+
+          &::before {
+            content: "$>";
+            width: 0;
+            position: absolute;
+            left: -25px;
+            display: flex;
+            flex-direction: row;
+            color: white;
+            border-radius: 0;
+            font-size: 14pt;
+            font-family: 'Hack';
+            align-content: center;
+            align-items: center;
+          }
+          >.project-url {
+            text-transform: uppercase;
+            font-family: Hack, monospace;
+            font-size: 0.9rem;
+            margin: 0 6px;
+            color: white !important;
+            text-decoration: none;
+            transition: 0.5s ease-in-out;
+          }
+          >.demo {
+            color: #bcff73!important;
+            text-transform: uppercase;
+            font-family: Hack, monospace;
+            font-size: 0.9rem;
+            transition: 0.5s ease-in-out;
+            text-decoration: none;
+            position: relative;
+            &::after {
+              opacity: 0;
+              content: "<";
+              color: orangered;
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              // right: -10px;
+              line-height: 16px;
+              margin: auto;
+              font-family: "Hack";
+              font-size: 1rem;
+              transition: opacity .2s cubic-bezier(.9, .29, .24, .96);
+            }
+            &::before {
+              opacity: 0;
+              content: ">";
+              color: orangered;
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              left: -10px;
+              line-height: 16px;
+              margin: auto;
+              font-family: "Hack";
+              font-size: 1rem;
+              transition: opacity .2s cubic-bezier(.9, .29, .24, .96);
+            }
+          }
+          a:visited  {
+            color: inherit;
+          }
+
+        }
+        
+      }
+    }
+    >.contact-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      color: white;
+      height: 100px;
+      margin-top: 0;
+      align-content: center;
+      flex-wrap: nowrap;
+      >small {
+        color: white;
+        margin: 1px 0;
+        font-family: Hack,monospace;
+        font-size: 0.8rem;
+      }
+    }
+    >.footer {
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items:center;
+      position: absolute;
+      margin: auto;
+      bottom:0;
+      >pre {
+        font-family: Hack,monospace;
+          font-size: 0.8rem;
+        color: white;
+        >a {
+          color: #a3a3a3;
+          text-decoration: none;
+        }
+        &.special {
+          @include random-bgr();
+          >a {
+            color: white !important;
+          }
+        }
+      }
+    }
+  }
+}
