@@ -2,6 +2,8 @@
 
 Welcome traveler !
 
-My name is Nassim, I am an ex School 42 Student. Currently working at **[REDACTED]** using .NET
+My name is Nassim, i code stuff, it doesnt work, so i do more stuff to make it work.
+
+if you read this, you're a good person :) 🌍
 
 Thanks for passing by 😎
